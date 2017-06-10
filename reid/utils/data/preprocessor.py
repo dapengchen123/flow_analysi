@@ -36,7 +36,7 @@ class Preprocessor(object):
             if self.transform is not None:
                 imgrgb = self.transform(imgrgb)
                 flowrgb = self.transform(flowrgb)
-                img = torch.cat([imgrgb, flowrgb[0:2]], 0)
+                img = torch.cat([imgrgb, flowrgb[1:3]], 0)
             else:
                 img = imgrgb
 
