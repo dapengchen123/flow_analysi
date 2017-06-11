@@ -46,5 +46,3 @@ class Preprocessor(object):
             raise RuntimeError("channel of input images are not validate")
 
 
-
-
