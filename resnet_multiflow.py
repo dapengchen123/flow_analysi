@@ -192,7 +192,7 @@ def main(args):
         adjust_lr(epoch)
         trainer.train(epoch, train_loader, optimizer)
 
-        if epoch % 5  == 0:
+        if epoch % 3  == 0:
             #top1 = evaluator.evaluate(val_loader, dataset.val, dataset.val)
             top1 = evaluator.evaluate(test_loader, dataset.query, dataset.gallery, multi_shot=True)
             is_best = top1 > best_top1
