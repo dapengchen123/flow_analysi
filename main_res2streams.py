@@ -90,7 +90,7 @@ def main(args):
     # Create data loaders
     if args.loss == 'triplet':
         assert args.num_instances > 1, 'TripletLoss requires num_instances > 1'
-        assert args.batch_size % args.num_instances == 0, \
+        assert args.batch_size % args.num_instances == 0, \repr()
             'num_instances should divide batch_size'
 
     dataset, num_classes, train_loader, val_loader, test_loader = \
