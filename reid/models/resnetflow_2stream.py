@@ -51,7 +51,8 @@ class ResNetflow2stream(nn.Module):
 
         #### fusion layers
         out_planes = self.base1.fc.in_features
-        self.conv_fusion = nn.Conv2d(out_planes*2, out_planes, kernel_size=3, stride=1, padding=1, bias=False)
+        out_planes2 = self.base2.fc.in_features
+        self.conv_fusion = nn.Conv2d(out_planes + out_planes2, out_planes, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn_fusion = nn.BatchNorm2d(out_planes)
 
 
