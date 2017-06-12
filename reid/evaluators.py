@@ -176,7 +176,6 @@ class Evaluator(object):
         features, _ = extract_features(self.model, data_loader)
         distmat = pairwise_distance(features, query, gallery, metric=metric)
         if multi_shot:
-
             return evaluate_multi(distmat, query=query, gallery=gallery)
         else:
             return evaluate_all(distmat, query=query, gallery=gallery)

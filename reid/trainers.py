@@ -25,8 +25,11 @@ class BaseTrainer(object):
 
         end = time.time()
         for i, inputs in enumerate(data_loader):
-            data_time.update(time.time() - end)
 
+            if inputs[3].size()[0] < data_loader.batch_size/2:
+                continue
+
+            data_time.update(time.time() - end)
             inputs, targets = self._parse_data(inputs)
             loss, prec1 = self._forward(inputs, targets)
 
