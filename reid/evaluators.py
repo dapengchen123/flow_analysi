@@ -11,7 +11,6 @@ from .utils.meters import AverageMeter
 
 
 def extract_features(model, data_loader, print_freq=100, metric=None):
-    model.eval()
     batch_time = AverageMeter()
     data_time = AverageMeter()
 
